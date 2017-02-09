@@ -1,0 +1,27 @@
+body {
+	font-size: 1.5em;
+	letter-spacing: 2px;
+}
+
+#card {
+	width: 60%;
+}
+
+#display_area {
+	min-height: 50px;
+	overflow-x: scroll;
+}
+
+#input_area {
+	width: 60%;
+	display: inline;
+}
+
+input:active, input:focus {
+	outline:0px !important;
+}
+
+#restart img {
+	height: 40px;
+	width: 40px;
+}
