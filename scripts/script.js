@@ -9,6 +9,9 @@ var time = 60;
 var once = false;
 var wordCount = 0;
 
+var correctWords = 0;
+var wrongWords = 0;
+
 for(var i = 0 ; i < rawWordArr.length ; i++) {
 	wordArr.push("<span class='"+i+"'>"+rawWordArr[i]+"</span>&nbsp;");
 }
