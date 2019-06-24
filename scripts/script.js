@@ -1,4 +1,5 @@
 var displayArea = $("#display_area");
+var scoreDisplay = $("#score_display");
 var inputArea = $("#input_area");
 var timerArea = $("#timer_area");
 var text = "A bear came across a log where a swarm of bees had nested to make their honey. As he snooped around, a single little bee flew out of the log to protect the swarm. Knowing that the bear would eat all the honey, the little bee stung him sharply on the nose and flew back into the log.";
@@ -43,14 +44,25 @@ function start(evt) {
 }
 
 function timer() {
-	if(time > 0) {
+	if(time >= 0) {
 		timerArea.html(time+" sec");
 		time--;
 		setTimeout(timer, 1000);
 	}
 	else {
 		// displaying the result
+		console.log("Correct words: " + correctWords);
+		console.log("Incorrect words: " + wrongWords);
+
+		document.getElementById('score_modal').style.display='block';
+		scoreMsg = "<div id='result_design'> <span class='correct'>Correct words: " + correctWords + "</span><br> <span class='wrong'>Wrong words: " + wrongWords + "</span></div>";
+		scoreDisplay.append(scoreMsg);
 	}
+}
+
+function displayResult() {
+	document.getElementById('score_modal').style.display='none';
+	restart();
 }
 
 function restart() {
