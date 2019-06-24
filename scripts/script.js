@@ -36,9 +36,11 @@ function start(evt) {
 	if(keyCode == 32) {
 		if(inputValue == rawWordArr[wordCount]) {
 			displayArea.children("."+wordCount).removeClass("highlight").addClass("correct");
+			correctWords++;
 		}
 		else {
 			displayArea.children("."+wordCount).removeClass("highlight").addClass("wrong");
+			wrongWords++;
 		}
 		inputArea.val("");
 		wordCount++;
